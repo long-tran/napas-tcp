@@ -1,0 +1,9 @@
+<mux class="org.jpos.q2.iso.QMUX" logger="Q2" name="napas-mux">
+    <key>42 41 11</key> 
+    <in>napas-channel-receive</in>
+    <out>napas-channel-send</out>
+    <ready>napas-channel.ready</ready>
+    <request-listener class="org.jpos.bsh.BSHRequestListener" logger="Q2" realm="sent-from-napas-listener">
+        <property name="source" value="src/main/q2/scripts/sent-from-napas.bsh" />
+    </request-listener>
+</mux>

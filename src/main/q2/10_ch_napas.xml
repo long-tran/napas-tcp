@@ -1,0 +1,13 @@
+<channel-adaptor name='napas-channel' logger="Q2">
+    <channel class="org.jpos.iso.channel.XMLChannel"
+        packager="org.jpos.iso.packager.XMLPackager">
+        header="6000000000">
+        <property name="packager-config" value="src/main/q2/packagers/packager.napas.xml" />
+        <property name="host" value="127.0.0.1" />
+        <property name="port" value="8001" />
+        <property name="timeout" value="300000" /> 
+    </channel>
+    <in>napas-channel-send</in>
+    <out>napas-channel-receive</out>
+    <reconnect-delay>5000</reconnect-delay>
+</channel-adaptor>

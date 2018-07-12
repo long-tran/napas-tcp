@@ -1,0 +1,18 @@
+<script name="test-send-mux">
+        /**
+        import org.jpos.util.NameRegistrar;
+        import org.jpos.iso.ISOMUX;
+        **/
+        try {
+            org.jpos.q2.iso.QMUX mux = org.jpos.q2.iso.QMUX.getMUX("napas-mux"); 
+            org.jpos.iso.ISOMsg m = new org.jpos.iso.ISOMsg("0800"); 
+            
+            m.set (3, "000000");
+            m.set (52, "CAFEBABE".getBytes());
+            mux.send(m);
+        } catch (org.jpos.util.NameRegistrar.NotFoundException e) {
+            log.error("Mux 'napas-mux' not found, do you have a 'XX_mux_napas.xml' file?",e);
+        } 
+
+        log.info ("Hello jPOS!");
+</script>

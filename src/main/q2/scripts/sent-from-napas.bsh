@@ -1,0 +1,3 @@
+log.info("----- I AM THE MUX OF THE BANK, I RECEIVED -----");
+log.info(message);
+log.info("----- I AM THE MUX OF THE BANK, FINISH -----");

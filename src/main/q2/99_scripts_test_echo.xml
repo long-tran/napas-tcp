@@ -1,0 +1,3 @@
+<script name="test-println">
+ log.info ("Hello jPOS!");
+</script>
