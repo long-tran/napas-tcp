@@ -4,15 +4,24 @@
         import org.jpos.iso.ISOMUX;
         **/
         try {
-            org.jpos.q2.iso.QMUX mux = org.jpos.q2.iso.QMUX.getMUX("napas-mux"); 
+            org.jpos.q2.iso.QMUX mux = org.jpos.q2.iso.QMUX.getMUX("napas-mux-at-bank"); 
+            if (!mux.isConnected()) {
+                log.error("ERROR: Mux 'napas-mux-at-bank' is not connected, please check your connection to Napas");
+                return;
+            } 
+            
             org.jpos.iso.ISOMsg m = new org.jpos.iso.ISOMsg("0800"); 
             
-            m.set (3, "000000");
+            m.set (3, "31A000"); 
+            m.set (11, "000011"); 
+            m.set (12, "122355"); 
+            m.set (32, "9170432"); 
+            m.set (37, "RRN839182903"); 
             m.set (52, "CAFEBABE".getBytes());
             mux.send(m);
         } catch (org.jpos.util.NameRegistrar.NotFoundException e) {
-            log.error("Mux 'napas-mux' not found, do you have a 'XX_mux_napas.xml' file?",e);
-        } 
+            log.error("Mux 'napas-mux-at-bank' not found, do you have a 'XX_mux_napas_at_bank.xml' file?",e);
+        }
 
         log.info ("Hello jPOS!");
 </script>
