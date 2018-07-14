@@ -13,15 +13,17 @@
             org.jpos.iso.ISOMsg m = new org.jpos.iso.ISOMsg("0800"); 
             
             m.set (3, "31A000"); 
-            m.set (11, "000011"); 
+            m.set (11, "000019"); 
             m.set (12, "122355"); 
             m.set (32, "9170432"); 
             m.set (37, "RRN839182903"); 
             m.set (52, "CAFEBABE".getBytes());
-            mux.send(m);
+            org.jpos.iso.ISOMsg res = mux.request(m, 30000);
+            log.info("--START RESPONSE----");
+            log.info(res);
+            log.info("--END RESPONSE----");
         } catch (org.jpos.util.NameRegistrar.NotFoundException e) {
             log.error("Mux 'napas-mux-at-bank' not found, do you have a 'XX_mux_napas_at_bank.xml' file?",e);
         }
 
-        log.info ("Hello jPOS!");
 </script>

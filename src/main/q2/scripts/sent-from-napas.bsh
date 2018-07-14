@@ -1,3 +1,9 @@
-log.info("----- I AM THE MUX OF THE BANK, I RECEIVED -----");
+log.info("----- I AM THE MUX AT THE BANK, I RECEIVED -----");
 log.info(message);
-log.info("----- I AM THE MUX OF THE BANK, FINISH -----");
+String rc = message.getString(11);
+if (rc == null || rc.length() < 2) rc = "00";
+rc = rc.substring(rc.length() - 2, rc.length());
+message.setResponseMTI();
+message.set(39, rc);
+source.send(message);
+log.info("----- I AM THE MUX AT THE BANK, FINISH -----");

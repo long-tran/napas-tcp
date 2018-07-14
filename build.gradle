@@ -12,7 +12,7 @@ plugins {
 }
 
 task q2 (dependsOn: 'classes', type: JavaExec) {
-    main = 'devatnight.napas.JposQ2'
+    main = 'devatnight.JposQ2'
     classpath = sourceSets.main.runtimeClasspath
     args 'src/main/q2'
 }

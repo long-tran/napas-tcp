@@ -1,7 +1,11 @@
-package devatnight.napas
+package devatnight
 
 import org.jpos.q2.Q2
-
+/**
+ * JposQ2 - Start Q2
+ * @author <a href="mailto:long@long-tran.com">Long Tran</a>
+ * @version $Revision$ $Date$
+ */
 class JposQ2 {
 
     public static void main (String[] args) {
