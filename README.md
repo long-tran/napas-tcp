@@ -30,9 +30,9 @@ ASCII encoding:
 ***
 ## What I am writing in this software (and what I am NOT)
 ### YES, I will be writing
-1. A Mock/Fake NAPAS server, running on your local host port ```8001```, with a default response (```field 39```) as the last 02 digits of the Trace Number (```field 11```). Example: you send a message with Trace Number = 01920**55**, then, the response will be **55**, see what I did there? Cool, huh.
+1. A Mock/Fake NAPAS server, (see here: https://github.com/long-tran/napas-mock-server) running on your local host port ```8001```, with a default response (```field 39```) as the last 02 digits of the Trace Number (```field 11```). Example: you send a message with Trace Number = 01920**55**, then, the response will be **55**, see what I did there? Cool, huh.
 2. An up-to-date decoder/encoder (or a packager) that understands NAPAS (as of writing of this document), located at: https://github.com/long-tran/napas-tcp/blob/master/src/main/q2/packagers/packager.napas.xml
-3. A Factory for you to map between the message and your business logic via the (```TODOInterface```) using MTI and Processing Code (```field 03```).
+3. A Factory for you to map between the message and your business logic via the (```MtiAndProcessingCodeListener```) using MTI and Processing Code (```field 03```).
 ### NO, I am NOT writing here in this software
 Your **BUSINESS LOGIC or INTERFACE** to your Backend/CoreBanking systems (unless you PAY me a huge load of $$$)
 
@@ -45,6 +45,12 @@ Your **BUSINESS LOGIC or INTERFACE** to your Backend/CoreBanking systems (unless
 ***
 # Author
 It's just me, for now, ping me at **long** at **long-tran** dot **com**.
+
+# Credits
+This application uses Open Source components. You can find the source code of their open source projects along with license information below. We acknowledge and are grateful to these developers for their contributions to open source.
+
+Project: jPOS, https://jpos.org, by [Alejandro Revilla](https://github.com/ar)
+
 
 
 
